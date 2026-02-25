@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Formulário de cadastro</h1>
+      <!-- Dados Pessoais Start -->
+      <form action="">
+        <fieldset class="DadosBasicos">
+          <legend>Dados Pessoais</legend>
+          <label>
+            Nome Completo:
+            <input type="text" name="nome" placeholder="Nome" required />
+            <input
+              type="text"
+              name="sobrenome"
+              placeholder="Sobrenome"
+              required
+            />
+          </label>
+          <br />
+          <label for="">
+            Data de nascimento:
+            <input type="date" name="data" required />
+          </label>
+          <br />
+          <label for="">
+            Email:
+            <input type="email" name="email" size="60" required />
+          </label>
+          <br />
+          <label for="">
+            Telefone:
+            <input type="number" name="Telefone" />
+          </label>
+          <br />
+          <label >
+            Genero:
+            <input type="checkbox" /> Masculino
+            <input type="checkbox" /> Feminino
+            <input type="checkbox"> Outros
+          </label>
+          <br />
+          <label
+            for="
+          "
+          >
+            Sobre você:
+            <br />
+            <textarea
+              name="textarea"
+              id=""
+              placeholder="Digite sua mensagem"
+            ></textarea>
+          </label>
+        </fieldset>
+        <!-- Dados Pessoais End-->
+        <!-- Conhecimentos Start-->
+        <fieldset class="Conhecimentos">
+          <legend>Conhecimentos</legend>
+          <label for="">
+            <input type="checkbox" /> HTML <input type="checkbox" /> CSS
+            <input type="checkbox" /> JS <input type="checkbox" /> PHP
+            <input type="checkbox" /> PYTHON <input type="checkbox" /> JAVA
+            <input type="checkbox" /> C++ <input type="checkbox" /> C#
+          </label>
+        </fieldset>
+        <!-- Conhecimentos End-->
+        <!-- Dados usuario Start-->
+        <fieldset class="adicionais">
+          <legend>Dados de acesso</legend>
+          <label for="">
+            Usuario:
+            <input type="text" name="usuario" size="60"/>
+          </label>
+          <br />
+          <label for="">
+            Senha:
+            <input type="password" size="60"/>
+          </label>
+        </fieldset>
+        <!-- Dados usuario End-->
+        <div class="botao"><button>Enviar informações</button></div>
+      </form>
+    </div>
+  </body>
+</html>

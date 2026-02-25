@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculadora</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/css/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="calculator">
+				<div class="containerDisplay">
+					<div class="inputContainer">
+						<div id="display">0</div>
+					</div>
+					<div class="resultContainer"></div>
+				</div>
+				<div class="containerButtons">
+					<div class="buttonsCalculator">
+						<button class="greyButtons" id="deleteButton" onclick="limpar()">
+							AC
+						</button>
+						<button class="greyButtons" id="sqrt" onclick="digitar('√')">√</button>
+						<button class="greyButtons" id="porcent" onclick="digitar('%')">%</button>
+						<button class="blueButtons" id="divide" onclick="digitar('÷')">÷</button>
+
+						<button class="redButtons" id="seven" onclick="digitar('7')">7</button>
+						<button class="redButtons" id="eight" onclick="digitar('8')">8</button>
+						<button class="redButtons" id="nine" onclick="digitar('9')">9</button>
+						<button class="blueButtons" id="times" onclick="digitar('x')">x</button>
+
+						<button class="redButtons" id="four" onclick="digitar('4')">4</button>
+						<button class="redButtons" id="five" onclick="digitar('5')">5</button>
+						<button class="redButtons" id="six" onclick="digitar('6')">6</button>
+						<button class="blueButtons" id="less" onclick="digitar('-')">-</button>
+
+						<button class="redButtons" id="one" onclick="digitar('1')">1</button>
+						<button class="redButtons" id="two" onclick="digitar('2')">2</button>
+						<button class="redButtons" id="three" onclick="digitar('3')">3</button>
+						<button class="blueButtons" id="plus" onclick="digitar('+')">+</button>
+
+						<button class="redButtons" id="zero" onclick="digitar('0')">0</button>
+						<button class="redButtons" id="dot" onclick="digitar('.')">.</button>
+						<button class="blueButtons" id="equal" onclick="calcular()">=</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="./assets/script/script.js"></script>
+	</body>
+</html>

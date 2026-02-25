@@ -1,0 +1,230 @@
+/* ---------- VARIABLES ---------- */
+/* cores e valores para facilitar a manutenção */
+:root {
+  --primary-bg: #14151a;
+  --card-bg: rgba(255, 255, 255, 0.2);
+  --text-color: #ffffff;
+  --placeholder-color: #ffffff5d;
+  --shadow-color: #1ffdf2;
+  --gradient-start: #314755;
+  --gradient-mid: #26a0da;
+
+  --anim-duration: 0.6s;
+  --anim-delay: 0.3s;
+}
+
+/* ---------- GLOBAL & RESET ---------- */
+/* Estilos base que se aplicam a tudo */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* ---------- GENERAL ELEMENT STYLES ---------- */
+/* Estilização padrão para tags HTML comuns */
+h2 {
+  margin-bottom: 32px;
+  font-weight: 700;
+  font-size: 50px;
+  color: var(--text-color);
+}
+
+p {
+  margin-bottom: 32px;
+  width: 300px;
+  color: var(--text-color);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input,
+button {
+  width: 400px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 16px;
+}
+
+input {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+input::placeholder {
+  color: var(--placeholder-color);
+  font-size: 18px;
+  transition: opacity 0.3s;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+}
+
+button {
+  margin-top: 12px;
+  background-image: linear-gradient(
+    to right,
+    var(--gradient-start) 0%,
+    var(--gradient-mid) 51%,
+    var(--gradient-start) 100%
+  );
+  background-size: 200% auto;
+  box-shadow: 0 0 5px var(--shadow-color);
+  font-weight: 700;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-position: right center;
+  color: var(--text-color);
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+/* ---------- LAYOUT STYLES ---------- */
+/* Estrutura principal da página */
+.mainContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  width: 80%;
+  height: 90vh;
+  background-color: var(--card-bg);
+  border-radius: 32px;
+  padding: 32px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(100deg, #00060a 1%, #01beed 91.4%);
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: transform var(--anim-duration);
+}
+
+.leftSide,
+.righSide {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+/* ---------- COMPONENT STYLES & INITIAL STATES ---------- */
+/* Estilos dos blocos de conteúdo e seus estados iniciais de animação */
+.formlogin,
+.facaLogin,
+.formCadastro,
+.facaCadastro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Posiciona os painéis que se sobrepõem */
+.facaLogin,
+.formCadastro {
+  position: absolute;
+}
+
+/* Estados iniciais (escondidos) */
+.formlogin {
+  opacity: 0;
+  transition: all var(--anim-duration);
+}
+
+.formCadastro {
+  opacity: 0;
+  transition: all var(--anim-duration);
+}
+
+.facaLogin {
+  transform: translateX(-200%);
+  opacity: 0;
+  transition: all var(--anim-duration);
+}
+
+.facaCadastro {
+  transform: translateX(200%);
+  opacity: 0;
+  transition: all var(--anim-duration);
+}
+
+/* ---------- STATE MODIFIERS & ANIMATIONS ---------- */
+/* Classes que ativam as animações */
+
+/* ESTADO DE LOGIN ATIVO */
+.card.loginActive .facaLogin,
+.card.loginActive .formCadastro {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card.loginActive .facaCadastro {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all var(--anim-duration) var(--anim-delay);
+}
+
+.card.loginActive .formlogin {
+  opacity: 1;
+  transition: all var(--anim-duration) var(--anim-delay);
+}
+
+.card.loginActive::after {
+  transform: translateX(50%);
+}
+
+/* ESTADO DE CADASTRO ATIVO */
+.card.cadastroActive .facaCadastro,
+.card.cadastroActive .formlogin {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.card.cadastroActive .facaLogin {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all var(--anim-duration) var(--anim-delay);
+}
+
+.card.cadastroActive .formCadastro {
+  opacity: 1;
+  transition: all var(--anim-duration) var(--anim-delay);
+}
+
+.card.cadastroActive::after {
+  transform: translateX(-50%);
+}

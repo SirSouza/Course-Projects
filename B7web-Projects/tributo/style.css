@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(231, 230, 230);
+
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 2px 2px 10px;
+}
+.container h1 a {
+    text-decoration: none;
+    color: black;
+}
+.container h1 a:hover {
+    color: rgb(105, 104, 104);
+}
+.container h1 {
+  font-size: 60px;                               
+}
+.container .aka {
+    font-size: 25px;
+}
+.main {
+    margin-top: 20px;
+    display: flex;
+}
+.about {
+    display: flex;
+    flex-direction: column;
+    padding: 20px ;
+}
+h2 {
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+.about p {
+    font-size: 17px;
+    padding-bottom: 20px;
+}
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divtime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.divtime p {
+    font-size: 17px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+footer .footer_text {
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.footer_text {
+    padding-top: 20px;
+}
+footer .end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
