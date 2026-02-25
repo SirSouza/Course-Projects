@@ -9,9 +9,10 @@ function updateClock() {
   let hour = now.getHours();
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
-
+  // Digital
   digital.textContent = `${fixZero(hour)}:${fixZero(minutes)}:${fixZero(seconds)}`;
 
+  // Analógico
   let secDeg = (360 / 60) * seconds - 90;
   let minDeg = (360 / 60) * minutes - 90;
   let hourDeg = (360 / 12) * hour - 90;
